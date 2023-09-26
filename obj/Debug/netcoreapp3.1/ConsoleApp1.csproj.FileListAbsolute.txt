@@ -12,3 +12,16 @@ C:\Users\Марк\source\repos\BBI-23-1\bin\Debug\netcoreapp3.1\ConsoleApp1.pdb
 C:\Users\Марк\source\repos\BBI-23-1\obj\Debug\netcoreapp3.1\ConsoleApp1.dll
 C:\Users\Марк\source\repos\BBI-23-1\obj\Debug\netcoreapp3.1\ConsoleApp1.pdb
 C:\Users\Марк\source\repos\BBI-23-1\obj\Debug\netcoreapp3.1\ConsoleApp1.genruntimeconfig.cache
+C:\Users\tigop\Рабочий стол\Coding\progmisis\bin\Debug\netcoreapp3.1\ConsoleApp1.exe
+C:\Users\tigop\Рабочий стол\Coding\progmisis\bin\Debug\netcoreapp3.1\ConsoleApp1.deps.json
+C:\Users\tigop\Рабочий стол\Coding\progmisis\bin\Debug\netcoreapp3.1\ConsoleApp1.runtimeconfig.json
+C:\Users\tigop\Рабочий стол\Coding\progmisis\bin\Debug\netcoreapp3.1\ConsoleApp1.runtimeconfig.dev.json
+C:\Users\tigop\Рабочий стол\Coding\progmisis\bin\Debug\netcoreapp3.1\ConsoleApp1.dll
+C:\Users\tigop\Рабочий стол\Coding\progmisis\bin\Debug\netcoreapp3.1\ConsoleApp1.pdb
+C:\Users\tigop\Рабочий стол\Coding\progmisis\obj\Debug\netcoreapp3.1\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tigop\Рабочий стол\Coding\progmisis\obj\Debug\netcoreapp3.1\ConsoleApp1.AssemblyInfoInputs.cache
+C:\Users\tigop\Рабочий стол\Coding\progmisis\obj\Debug\netcoreapp3.1\ConsoleApp1.AssemblyInfo.cs
+C:\Users\tigop\Рабочий стол\Coding\progmisis\obj\Debug\netcoreapp3.1\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\tigop\Рабочий стол\Coding\progmisis\obj\Debug\netcoreapp3.1\ConsoleApp1.dll
+C:\Users\tigop\Рабочий стол\Coding\progmisis\obj\Debug\netcoreapp3.1\ConsoleApp1.pdb
+C:\Users\tigop\Рабочий стол\Coding\progmisis\obj\Debug\netcoreapp3.1\ConsoleApp1.genruntimeconfig.cache
