@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tigop\\Рабочий стол\\Coding\\progmisis\\ConsoleApp1.csproj": {}
+    "C:\\Users\\tigop\\Рабочий стол\\Coding\\progmisis\\git\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tigop\\Рабочий стол\\Coding\\progmisis\\ConsoleApp1.csproj": {
+    "C:\\Users\\tigop\\Рабочий стол\\Coding\\progmisis\\git\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tigop\\Рабочий стол\\Coding\\progmisis\\ConsoleApp1.csproj",
+        "projectUniqueName": "C:\\Users\\tigop\\Рабочий стол\\Coding\\progmisis\\git\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\tigop\\Рабочий стол\\Coding\\progmisis\\ConsoleApp1.csproj",
+        "projectPath": "C:\\Users\\tigop\\Рабочий стол\\Coding\\progmisis\\git\\ConsoleApp1.csproj",
         "packagesPath": "C:\\Users\\tigop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tigop\\Рабочий стол\\Coding\\progmisis\\obj\\",
+        "outputPath": "C:\\Users\\tigop\\Рабочий стол\\Coding\\progmisis\\git\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tigop\\AppData\\Roaming\\NuGet\\NuGet.Config",

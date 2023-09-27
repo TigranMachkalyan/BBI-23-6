@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lZXsaMSVYcMTBWb+alKOBSnB+EItNWWphg+DpBaPVmzSGjLwtZ0grdHAVNvxSw9JtAOli5la15TN96AFyXXIiQ==",
+  "dgSpecHash": "LHXuDQ79kKrrkEkvp+tcrQ3snd5USn67t4syAAakgNI+HNbS0P821mgGgdZOUcSi74xe6Q7phjxxf9ydKtvxQA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tigop\\Рабочий стол\\Coding\\progmisis\\ConsoleApp1.csproj",
+  "projectFilePath": "C:\\Users\\tigop\\Рабочий стол\\Coding\\progmisis\\git\\ConsoleApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tigop\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
     "C:\\Users\\tigop\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
