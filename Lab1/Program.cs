@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 
-namespace ConsoleApp1
+namespace Lab1
 {
     internal class Program
     {
@@ -18,7 +18,7 @@ namespace ConsoleApp1
         {
             return Math.Cos(xo);
         }
-        
+
         static public void LevelSelect()
         {
             Console.WriteLine();
@@ -44,7 +44,7 @@ namespace ConsoleApp1
                 LevelSelect();
             }
         }
-        
+
         static public void Level1(double x)
         {
             double s = 0;
@@ -278,7 +278,7 @@ namespace ConsoleApp1
             }
             Console.WriteLine("1_15:\n{0}", s);
         }
-        
+
         static public void Level2(double x)
         {
             double s = 0;
@@ -422,7 +422,7 @@ namespace ConsoleApp1
                 }
             }
         }
-        
+
         static void Main(string[] args)
         {
             LevelSelect();
