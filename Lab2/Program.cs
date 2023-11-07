@@ -113,21 +113,34 @@ namespace Lab2
 
             Console.WriteLine();
             //6
-            Console.WriteLine("Enter n:");
-            n = Convert.ToInt32(Console.ReadLine());
             r = 0;
             for (int i = 0; i < n; i++)
             {
-                Console.WriteLine("Enter x:");
-                double x = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Enter y:");
-                double y = Convert.ToDouble(Console.ReadLine());
-                if ((x >= 0 & x <= Math.PI) & (y >= 0 & y <= Math.Sin(x)))
+                while (true)
                 {
-                    r++;
+                    Console.WriteLine("Enter x:");
+                    string inp = Console.ReadLine();
+                    double x;
+                    if (inp == "stop")
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        x = Convert.ToDouble(inp);
+                    }
+                    Console.WriteLine("Enter y:");
+                    double y = Convert.ToDouble(Console.ReadLine());
+                    bool f = Convert.ToBoolean(Math.Floor(x/Math.PI)%2);
+                    Console.WriteLine(f);
+                    if ((x >= 0 & x <= Math.PI*10) & ((y >= 0 & y <= Math.Sin(x) & f) | (y <= 0 & y >= Math.Sin(x) & !f)))
+                    {
+                        r++;
+                    }
                 }
             }
             Console.WriteLine("2_6:\n{0}", r);
+
 
             Console.WriteLine();
             //9
