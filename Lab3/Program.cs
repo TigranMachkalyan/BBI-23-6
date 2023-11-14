@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 
-namespace Lab1
+namespace Lab3
 {
     internal class Program
     {
@@ -33,15 +33,13 @@ namespace Lab1
             for (int i = 0; i < k; i++)
             {
                 Console.WriteLine("Введите значение элемента под с индексом {0}", i);
-                r = r.Append(Convert.ToInt32(Console.ReadLine())).ToArray();
+                r = r.Append(Convert.ToDouble(Console.ReadLine())).ToArray();
             }
             return r;
         }
 
         static public void Level1()
         {
-            double x = 0;
-
             Console.WriteLine();
             //1
             Console.WriteLine("1_1:");
@@ -116,9 +114,10 @@ namespace Lab1
             //4
             Console.WriteLine("1_4:");
             ar = newarr(5);
-            for (int i = 0; i < ar1.Length; i++)
+            avg = ar.Average();
+            for (int i = 0; i < ar.Length; i++)
             {
-                ar[i] = ar[i] - ar.Average();
+                ar[i] = ar[i] - avg;
             }
             Console.WriteLine();
             for (int i = 0; i < ar.Length; i++)
@@ -155,237 +154,832 @@ namespace Lab1
 
             Console.WriteLine();
             //7
-            s = 1;
-            for (double i = 1; i <= 6; i++)
+            Console.WriteLine("1_7:");
+            ar = newarr(7);
+            avg = ar.Average();
+            for (int i = 0; i < ar.Length; i++)
             {
-                s *= i;
+                if (ar[i] > avg)
+                {
+                    ar[i] = 0;
+                }
             }
-            Console.WriteLine("1_7:\n{0}", s);
+            Console.WriteLine();
+            for (int i = 0; i < ar.Length; i++)
+            {
+                Console.WriteLine(ar[i]);
+            }
 
             Console.WriteLine();
             //8
+            Console.WriteLine("1_8:");
+            ar = newarr(6);
             s = 0;
-            double k = 1;
-            for (double i = 1; i <= 6; i++)
+            for (int i = 0; i < ar.Length; i++)
             {
-                k *= i;
-                s += k;
+                if (ar[i] < 0)
+                {
+                    s++;
+                }
             }
-            Console.WriteLine("1_8:\n{0}", s);
+            Console.WriteLine();
+            Console.WriteLine("Количество отрицательных элементов заданного массива: {0}", s);
 
             Console.WriteLine();
             //9
+            Console.WriteLine("1_9:");
+            ar = newarr(8);
             s = 0;
-            k = 1;
-            int z = -1;
-            for (double i = 1; i <= 6; i++)
+            avg = ar.Average();
+            for (int i = 0; i < ar.Length; i++)
             {
-                k *= i;
-                s += z * Math.Pow(5, i) / k;
-                z *= -1;
+                if (ar[i] > avg)
+                {
+                    s++;
+                }
             }
-            Console.WriteLine("1_9:\n{0}", s);
+            Console.WriteLine();
+            Console.WriteLine("Количество элементов заданного массива больше среднего: {0}", s);
 
             Console.WriteLine();
             //10
-            s = 1;
-            for (double i = 1; i <= 7; i++)
+            Console.WriteLine("1_10:");
+            ar = newarr(10);
+            s = 0;
+            Console.WriteLine("Введите P:");
+            double p = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Введите Q (P < Q):");
+            double q = Convert.ToDouble(Console.ReadLine());
+            for (int i = 0; i < ar.Length; i++)
             {
-                s *= 3;
+                if (ar[i] > p & ar[i] < q)
+                {
+                    s++;
+                }
             }
-            Console.WriteLine("1_10:\n{0}", s);
+            Console.WriteLine();
+            Console.WriteLine("Количество элементов заданного массива заключенных между P и Q: {0}", s);
 
             Console.WriteLine();
             //11
             Console.WriteLine("1_11:");
-            for (double i = 1; i <= 6; i++)
+            ar = newarr(10);
+            s = 0;
+            for (int i = 0; i < ar.Length; i++)
             {
-                Console.Write("{0} ", i);
+                if (ar[i] > 0)
+                {
+                    s++;
+                }
             }
-            Console.Write("\n");
-            for (double i = 1; i <= 6; i++)
+            ar1 = new double[] { };
+            for (int i = 0; i < ar.Length; i++)
             {
-                Console.Write("5 ");
+                if (ar[i] > 0)
+                {
+                    ar1 = ar1.Append(ar[i]).ToArray();
+                }
+            }
+            Console.WriteLine();
+            for (int i = 0; i < ar1.Length; i++)
+            {
+                Console.WriteLine(ar1[i]);
             }
 
-            Console.WriteLine("\n");
+
+            Console.WriteLine();
             //12
+            Console.WriteLine("1_12:");
+            ar = newarr(8);
             s = 0;
-            for (double i = 0; i <= 10; i++)
+            int c = 0;
+            for (int i = 0; i < ar.Length; i++)
             {
-                s += 1 / Math.Pow(x, i);
+                if (ar[i] < 0)
+                {
+                    s = ar[i];
+                    c = i;
+                }
             }
-            Console.WriteLine("1_12:\n{0}", s);
+            Console.WriteLine("Значение: {0}, номер: {1} ({2})", s, c, c+1);
 
             Console.WriteLine();
             //13
-            
+            Console.WriteLine("1_13:");
+            ar = newarr(10);
+            ar1 = new double[] { };
+            ar2 = new double[] { };
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    ar2 = ar2.Append(ar[i]).ToArray();
+                }
+                else
+                    ar1 = ar1.Append(ar[i]).ToArray();
+                {
+                }
+            }
+            Console.WriteLine("Первый массив:");
+            for (int i = 0; i < ar2.Length; i++)
+            {
+                Console.WriteLine(ar2[i]);
+            }
+            Console.WriteLine("Второй массив:");
+            for (int i = 0; i < ar1.Length; i++)
+            {
+                Console.WriteLine(ar1[i]);
+            }
 
             Console.WriteLine();
             //14
             Console.WriteLine("1_14:");
-            double a = 1;
-            double b = 1;
-            double c;
-            Console.Write("1 1 ");
-            for (double i = 1; i <= 6; i++)
+            ar = newarr(11);
+            s = 0;
+            for (int i = 0; i < ar.Length; i++)
             {
-                c = a + b;
-                a = b;
-                b = c;
-                Console.Write("{0} ", b);
+                if (ar[i] >= 0)
+                {
+                    s += ar[i] * ar[i];
+                }
+                else
+                {
+                    break;
+                }
             }
+            Console.WriteLine("Сумма квадратов элементов, расположенных до первого отрицательного элемента массива: {0}", s);
 
             Console.WriteLine();
             //15
-            double a1 = 1;
-            double b1 = 1;
-            double a2 = 2;
-            double b2 = 1;
-            double a3;
-            double b3;
-            s = a1 / b1 + a2 / b2;
-            for (double i = 1; i <= 3; i++)
+            Console.WriteLine("1_15:");
+            ar = newarr(10);
+            ar1 = new double[] { };
+            for (int i = 0; i < ar.Length; i++)
             {
-                a3 = a1 + a2;
-                b3 = b1 + b2;
-                s += a3 / b3;
-                a1 = a2;
-                b1 = b2;
-                a2 = a3;
-                b2 = b3;
+                double y = 0.5 * Math.Log(ar[i]);
+                ar1 = ar1.Append(y).ToArray();
             }
-            Console.WriteLine("1_15:\n{0}", s);
+            Console.WriteLine();
+            for (int i = 0; i < ar1.Length; i++)
+            {
+                Console.WriteLine(ar1[i]);
+            }
         }
 
         static public void Level2()
         {
-            double s = 0;
-            double x = 0;
-            Console.WriteLine();
-            //1
-            double m = Math.Cos(x);
-            double i = 1;
-            while (Math.Abs(m) >= 0.0001)
-            {
-                s += m;
-                i++;
-                m = Math.Cos(i * x) / (i * i);
-            }
-            s += m;
-            Console.WriteLine("2_1:\n{0}", s);
+            //in
+            Console.WriteLine("Введите массив для всего второго уровня:");
+            Console.WriteLine("Введите количество элементов массива:");
+            int n = int.Parse(Console.ReadLine());
+            double[] ar1 = newarr(n);
 
             Console.WriteLine();
-            //2
-            double p = 1;
-            double n = 1;
-            while (p <= 30000)
+            //1
+            double[] ar = ar1.Take(ar1.Length).ToArray();
+            double min_elem = double.MaxValue;
+            int min_ind = 0;
+            for (int i = 0; i < ar.Length; i++)
             {
-                p *= n;
-                n += 3;
+                if (ar[i] < min_elem)
+                {
+                min_elem = ar[i];
+                min_ind = i;
+                }
             }
-            n -= 3;
-            p /= n;
-            Console.WriteLine("2_2:\n{0}", n - 3);
+            ar[min_ind] = 2*min_elem;
+            Console.WriteLine("2_1:");
+            for (int i = 0; i < ar.Length; i++)
+            {
+                Console.Write($"{ar[i]} ");
+            }
+
+            Console.WriteLine("\n");
+            //2
+            ar = ar1.Take(ar1.Length).ToArray();
+            double max_elem = double.MinValue;
+            int max_ind = 0;
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] > max_elem)
+                {
+                    max_elem = ar[i];
+                    max_ind = i;
+                }
+            }
+            double s = 0;
+            for (int i = 0; i < max_ind; i++)
+            {
+                s += ar[i];
+            }
+            Console.WriteLine("2_2:\n{0}", s);
 
             Console.WriteLine();
             //3
-            s = 0;
-            n = 0;
-            Console.WriteLine("Enter a for 2_3: (DOUBLE ONLY!!!)");
-            double a = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter h for 2_3: (DOUBLE ONLY!!!)");
-            double h = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine();
-            while (s <= p)
+            ar = ar1.Take(ar1.Length).ToArray();
+            min_elem = double.MaxValue;
+            min_ind = 0;
+            for (int i = 0; i < ar.Length; i++)
             {
-                s += a + h * n;
-                n++;
+                if (ar[i] < min_elem)
+                {
+                    min_elem = ar[i];
+                    min_ind = i;
+                }
             }
-            n--;
-            Console.WriteLine("2_3:\n{0}", n);
+            for (int i = 0; i < min_ind; i++)
+            {
+                ar[i] = 2 * ar[i];
+            }
+            Console.WriteLine("2_3:");
+            for (int i = 0; i < ar.Length; i++)
+            {
+                Console.Write($"{ar[i]} ");
+            }
 
-            Console.WriteLine();
+
+            Console.WriteLine("\n");
             //4
-            s = 0;
-            Console.WriteLine("Enter x for 2_4: (|x| < 1 ONLY!!!)");
-            double x1 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine();
-            i = 1;
-            while (i >= 0.0001)
+            ar = ar1.Take(ar1.Length).ToArray();
+            max_elem = double.MinValue;
+            max_ind = 0;
+            for (int i = 0; i < ar.Length; i++)
             {
-                s += i;
-                i *= x1 * x1;
+                if (ar[i] > max_elem)
+                {
+                    max_elem = ar[i];
+                    max_ind = i;
+                }
             }
-            Console.WriteLine("2_4:\n{0}", s);
+            double avg = ar.Average();
+            for (int i = max_ind + 1; i < ar.Length; i++)
+            {
+                ar[i] = avg;
+            }
+            Console.WriteLine("2_4:");
+            for (int i = 0; i < ar.Length; i++)
+            {
+                Console.Write($"{ar[i]} ");
+            }
 
-            Console.WriteLine();
+            Console.WriteLine("\n");
             //5
-            Console.WriteLine("Enter N for 2_5: (INT ONLY!!!)");
-            n = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter M for 2_5: (INT ONLY!!!)");
-            m = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine();
-            double ch = 0;
-            while (n >= m)
+            ar = ar1.Take(ar1.Length).ToArray();
+            max_elem = double.MinValue;
+            max_ind = 0;
+            min_elem = double.MaxValue;
+            min_ind = 0;
+            for (int i = 0; i < ar.Length; i++)
             {
-                ch++;
-                n -= m;
+                if (ar[i] > max_elem)
+                {
+                    max_elem = ar[i];
+                    max_ind = i;
+                }
+                if (ar[i] < min_elem)
+                {
+                    min_elem = ar[i];
+                    min_ind = i;
+                }
             }
-            Console.WriteLine("2_5:\nЧастное: {0}, остаток: {1}", ch, n);
+            int a;
+            int b;
+            if (min_ind < max_ind)
+            {
+                 a = min_ind;
+                 b = max_ind;
+            }
+            else
+            {
+                a = max_ind;
+                b = min_ind;
+            }
+            double[] ar2 = new double[] { };
+            for (int i = a + 1; i < b; i++)
+            {
+                if (ar[i] < 0)
+                {
+                    ar2 = ar2.Append(ar[i]).ToArray();
+                }
+            }
+            Console.WriteLine("2_5:");
+            for (int i = 0; i < ar2.Length; i++)
+            {
+                Console.Write($"{ar2[i]} ");
+            }
 
-            Console.WriteLine();
+            Console.WriteLine("\n");
             //6
-            string except = "---";
-            Console.WriteLine("2_6:\n{0}", except);
-
+            ar = ar1.Take(ar1.Length).ToArray();
+            Console.WriteLine("Введите число P:");
+            double p = double.Parse(Console.ReadLine());
+            avg = ar.Average();
+            double min_dif = double.MaxValue;
+            int nearest_ind = 0;
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (Math.Abs(ar[i]-avg) < min_dif)
+                {
+                    min_dif = Math.Abs(ar[i] - avg);
+                    nearest_ind = i;
+                }
+            }
+            ar = ar.Append(ar[ar.Length - 1]).ToArray();
+            for (int i = ar.Length - 1; i > nearest_ind + 1; i--)
+            {
+                ar[i] = ar[i - 1];
+            }
+            ar[nearest_ind + 1] = p;
             Console.WriteLine();
+            Console.WriteLine("2_6:");
+            for (int i = 0; i < ar.Length; i++)
+            {
+                Console.Write($"{ar[i]} ");
+            }
+
+            Console.WriteLine("\n");
             //7
-            double dayly = 10;
-            double day = 1;
-            s = 10;
-            bool flag1, flag2, flag3;
-            flag1 = flag2 = flag3 = false;
-            double a1, a2, a3;
-            a1 = a2 = a3 = 1;
-            while ((flag1 & flag2 & flag3) == false)
+            ar = ar1.Take(ar1.Length).ToArray();
+            max_elem = double.MinValue;
+            max_ind = 0;
+            for (int i = 0; i < ar.Length; i++)
             {
-                day++;
-                dayly *= 1.1;
-                s += dayly;
-                if (day == 7 & flag1 == false)
+                if (ar[i] > max_elem)
                 {
-                    flag1 = true;
-                    a1 = s;
-                }
-                if (s >= 100 & flag2 == false)
-                {
-                    flag2 = true;
-                    a2 = day;
-                }
-                if (dayly > 20 & flag3 == false)
-                {
-                    flag3 = true;
-                    a3 = day;
+                    max_elem = ar[i];
+                    max_ind = i;
                 }
             }
-            Console.WriteLine("2_7:\nа) {0}\nб) {1}\nв){2}", a1, a2, a3);
+            if (max_ind != ar.Length - 1)
+            {
+                ar[max_ind + 1] = 2 * ar[max_ind + 1];
+                Console.WriteLine("2_7:");
+                for (int i = 0; i < ar.Length; i++)
+                {
+                    Console.Write($"{ar[i]} ");
+                }
+            }
+            else
+            {
+                Console.WriteLine("2_7:\nМаксимальный элемент последний в массиве");
+            }
+            
+
+            Console.WriteLine("\n");
+            //8
+            ar = ar1.Take(ar1.Length).ToArray();
+            max_elem = double.MinValue;
+            max_ind = 0;
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] > max_elem)
+                {
+                    max_elem = ar[i];
+                    max_ind = i;
+                }
+            }
+            min_elem = double.MaxValue;
+            min_ind = 0;
+            for (int i = max_ind + 1; i < ar.Length; i++)
+            {
+                if (ar[i] < min_elem)
+                {
+                    min_elem = ar[i];
+                    min_ind = i;
+                }
+            }
+            ar[max_ind] = min_elem;
+            ar[min_ind] = max_elem;
+            Console.WriteLine("2_8:");
+            for (int i = 0; i < ar.Length; i++)
+            {
+                Console.Write($"{ar[i]} ");
+            }
+
+            Console.WriteLine("\n");
+            //9
+            ar = ar1.Take(ar1.Length).ToArray();
+            max_elem = double.MinValue;
+            max_ind = 0;
+            min_elem = double.MaxValue;
+            min_ind = 0;
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] > max_elem)
+                {
+                    max_elem = ar[i];
+                    max_ind = i;
+                }
+                if (ar[i] < min_elem)
+                {
+                    min_elem = ar[i];
+                    min_ind = i;
+                }
+            }
+            if (min_ind < max_ind)
+            {
+                a = min_ind;
+                b = max_ind;
+            }
+            else
+            {
+                a = max_ind;
+                b = min_ind;
+            }
+            s = 0;
+            double c = 0;
+            for (int i = a + 1; i < b; i++)
+            {
+                s += ar[i];
+                c++;
+            }
+            avg = s / c;
+            Console.WriteLine("2_9:\n{0}", avg);
 
             Console.WriteLine();
-            //8
-            s = 10000;
-            i = 0;
-            while (s < 20000)
+            //10
+            ar = ar1.Take(ar1.Length).ToArray();
+            min_elem = double.MaxValue;
+            min_ind = 0;
+            for (int i = 0; i < ar.Length; i++)
             {
-                s *= 1.08;
-                i++;
+                if (ar[i] < min_elem & ar[i] > 0)
+                {
+                    min_elem = ar[i];
+                    min_ind = i;
+                }
             }
-            Console.WriteLine("2_8:\n{0}", i);
+            ar2 = new double[] { };
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (i != min_ind)
+                {
+                    ar2 = ar2.Append(ar[i]).ToArray();
+                }
+            }
+            Console.WriteLine("2_10:");
+            for (int i = 0; i < ar2.Length; i++)
+            {
+                Console.Write($"{ar2[i]} ");
+            }
+
+            Console.WriteLine("\n");
+            //11
+            ar = ar1.Take(ar1.Length).ToArray();
+            int last = 0;
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] > 0) { last = i; }
+            }
+            ar = ar.Append(ar[ar.Length - 1]).ToArray();
+            for (int i = ar.Length - 1; i > last + 1; i--)
+            {
+                ar[i] = ar[i - 1];
+            }
+            ar[last + 1] = p;
+            Console.WriteLine("2_11:");
+            for (int i = 0; i < ar.Length; i++)
+            {
+                Console.Write($"{ar[i]} ");
+            }
+
+            Console.WriteLine("\n");
+            //12
+            ar = ar1.Take(ar1.Length).ToArray();
+            max_elem = double.MinValue;
+            max_ind = 0;
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] > max_elem)
+                {
+                    max_elem = ar[i];
+                    max_ind = i;
+                }
+            }
+            s = 0;
+            for (int i = max_ind; i < ar.Length; i++)
+            {
+                s += ar[i];
+            }
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] < 0) { ar[i] = s; break; }
+            }
+            Console.WriteLine("2_12:");
+            for (int i = 0; i < ar.Length; i++)
+            {
+                Console.Write($"{ar[i]} ");
+            }
+
+            Console.WriteLine("\n");
+            //13
+            ar = ar1.Take(ar1.Length).ToArray();
+            max_elem = double.MinValue;
+            max_ind = 0;
+            for (int i = 0; i < ar.Length; i+=2)
+            {
+                if (ar[i] > max_elem)
+                {
+                    max_elem = ar[i];
+                    max_ind = i;
+                }
+            }
+            ar[max_ind] = max_ind;
+            Console.WriteLine("2_13:");
+            for (int i = 0; i < ar.Length; i++)
+            {
+                Console.Write($"{ar[i]} ");
+            }
+
+            Console.WriteLine("\n");
+            //14
+            ar = ar1.Take(ar1.Length).ToArray();
+            max_elem = double.MinValue;
+            max_ind = 0;
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] > max_elem)
+                {
+                    max_elem = ar[i];
+                    max_ind = i;
+                }
+            }
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] < 0) { ar[max_ind] = ar[i]; ar[i] = max_elem; break; }
+            }
+            Console.WriteLine("2_14:");
+            for (int i = 0; i < ar.Length; i++)
+            {
+                Console.Write($"{ar[i]} ");
+            }
+
+            Console.WriteLine("\n");
+            //15
+            Console.WriteLine("Введите n:");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Массив A:");
+            ar2 = newarr(n);
+            Console.WriteLine("Введите m:");
+            int m = int.Parse(Console.ReadLine());
+            Console.WriteLine("Массив B:");
+            double[] ar3 = newarr(m);
+            Console.WriteLine("Введите k:");
+            int k = int.Parse(Console.ReadLine());
+            double[] next = new double[] { };
+            for(int i = k + 1;i < ar2.Length;i++)
+            {
+                next = next.Append(ar2[i]).ToArray();
+            }
+            double[] arres = new double[] { };
+            for (int i = 0; i <= k; i++)
+            {
+                arres = arres.Append(ar2[i]).ToArray();
+            }
+            for (int i = 0; i < m; i++)
+            {
+                arres = arres.Append(ar3[i]).ToArray();
+            }
+            for (int i = 0; i < next.Length; i++)
+            {
+                arres = arres.Append(next[i]).ToArray();
+            }
+            Console.WriteLine("2_15:");
+            for (int i = 0; i < arres.Length; i++)
+            {
+                Console.Write($"{arres[i]} ");
+            }
+
+            Console.WriteLine("\n");
+            //16
+            ar = ar1.Take(ar1.Length).ToArray();
+            avg = ar.Average();
+            int[] arint = new int[] { };
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] < avg)
+                {
+                    arint = arint.Append(i).ToArray();
+                }
+            }
+            Console.WriteLine("2_16:");
+            for (int i = 0; i < arint.Length; i++)
+            {
+                Console.Write($"{arint[i]} ");
+            }
+
+            Console.WriteLine("\n");
+            //17
+            ar = ar1.Take(ar1.Length).ToArray();
+            max_elem = double.MinValue;
+            max_ind = 0;
+            min_elem = double.MaxValue;
+            min_ind = 0;
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] > max_elem)
+                {
+                    max_elem = ar[i];
+                    max_ind = i;
+                }
+                if (ar[i] < min_elem)
+                {
+                    min_elem = ar[i];
+                    min_ind = i;
+                }
+            }
+            double savg = 0;
+            double cavg = 0;
+            if (min_ind < max_ind)
+            {
+                for (int i = 0; i < ar.Length; i++)
+                {
+                    if (ar[i] < 0)
+                    {
+                        savg += ar[i];
+                        cavg++;
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < ar.Length; i++)
+                {
+                    if (ar[i] > 0)
+                    {
+                        savg += ar[i];
+                        cavg++;
+                    }
+                }
+            }
+            avg = savg / cavg;
+            Console.WriteLine("2_17:\n{0}", avg);
+
+            Console.WriteLine();
+            //18
+            double max_elem2 = double.MinValue;
+            double max_elem1 = double.MinValue;
+            for (int i = 0; i < ar.Length; i += 2)
+            {
+                if (ar[i] > max_elem2)
+                {
+                    max_elem2 = ar[i];
+                }
+            }
+            for (int i = 1; i < ar.Length; i += 2)
+            {
+                if (ar[i] > max_elem1)
+                {
+                    max_elem1 = ar[i];
+                }
+            }
+            if (max_elem2 > max_elem1)
+            {
+                for (int i = 0; i < ar.Length / 2; i++)
+                {
+                    ar[i] = 0;
+                }
+            }
+            else
+            {
+                for (int i = ar.Length / 2 + 1; i < ar.Length; i++)
+                {
+                    ar[i] = 0;
+                }
+            }
+            Console.WriteLine("2_18:");
+            for (int i = 0; i < ar.Length; i++)
+            {
+                Console.Write($"{ar[i]} ");
+            }
+
+            Console.WriteLine("\n");
+            //19
+            ar = ar1.Take(ar1.Length).ToArray();
+            max_elem = double.MinValue;
+            max_ind = 0;
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] > max_elem)
+                {
+                    max_elem = ar[i];
+                    max_ind = i;
+                }
+            }
+            if (max_elem > ar.Sum())
+            {
+                ar[max_ind] = 0;
+            }
+            else
+            {
+                ar[max_ind] = 2 * max_elem;
+            }
+            Console.WriteLine("2_19:");
+            for (int i = 0; i < ar.Length; i++)
+            {
+                Console.Write($"{ar[i]} ");
+            }
+
+            Console.WriteLine("\n");
+            //20
+            ar = ar1.Take(ar1.Length).ToArray();
+            min_elem = double.MaxValue;
+            min_ind = 0;
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] < min_elem & ar[i] > 0)
+                {
+                    min_elem = ar[i];
+                    min_ind = i;
+                }
+            }
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] < 0)
+                {
+                    if (i < min_ind)
+                    {
+                        k = 0;
+                    }
+                    else
+                    {
+                        k = 1;
+                    }
+                    break;
+                }
+            }
+            s = 0;
+            for (int i = k; i < ar.Length; i+=2)
+            {
+                s += ar[i];
+            }
+            Console.WriteLine("2_20:\n{0}", s);
         }
 
         static public void Level3_1()
         {
-            
+            //in
+            Console.WriteLine("Введите массив для всего третьего уровня:");
+            Console.WriteLine("Введите количество элементов массива:");
+            int n = int.Parse(Console.ReadLine());
+            double[] ar1 = newarr(n);
+
+            //1
+            double[] ar = ar1.Take(ar1.Length).ToArray();
+            int[] arint = new int[] { };
+            double max_elem = double.MinValue;
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] > max_elem)
+                {
+                    max_elem = ar[i];
+                    arint = new int[] { i };
+                }
+                else if (ar[i] == max_elem)
+                {
+                    arint = arint.Append(i).ToArray();
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine("3_1:");
+            for (int i = 0; i < arint.Length; i++)
+            {
+                Console.Write($"{arint[i]} ");
+            }
+
+            Console.WriteLine("\n");
+            //2
+            for (int i = 0; i < arint.Length; i++)
+            {
+                ar[arint[i]] += i + 1;
+            }
+            Console.WriteLine("3_2:");
+            for (int i = 0; i < ar.Length; i++)
+            {
+                Console.Write($"{ar[i]} ");
+            }
+
+            Console.WriteLine("\n");
+            //5
+            ar = ar1.Take(ar1.Length).ToArray();
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = i + 1; j < n; j++)
+                {
+                    if (i % 2 == 0 & j % 2 == 0 & ar[i] > ar[j])
+                    {
+                        double g = ar[i];
+                        ar[i] = ar[j];
+                        ar[j] = g;
+                    }
+                }
+            }
+            Console.WriteLine("3_5:");
+            for (int i = 0; i < ar.Length; i++)
+            {
+                Console.Write($"{ar[i]} ");
+            }
+            Console.WriteLine();
         }
 
         static void Main(string[] args)
