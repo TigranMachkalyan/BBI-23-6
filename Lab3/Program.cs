@@ -600,7 +600,7 @@ namespace Lab3
             //10
             ar = ar1.Take(ar1.Length).ToArray();
             min_elem = double.MaxValue;
-            min_ind = 0;
+            min_ind = -1;
             for (int i = 0; i < ar.Length; i++)
             {
                 if (ar[i] < min_elem & ar[i] > 0)
@@ -610,33 +610,45 @@ namespace Lab3
                 }
             }
             ar2 = new double[] { };
+            if(min_ind != -1) { 
             for (int i = 0; i < ar.Length; i++)
-            {
-                if (i != min_ind)
                 {
-                    ar2 = ar2.Append(ar[i]).ToArray();
+                    if (i != min_ind)
+                    {
+                        ar2 = ar2.Append(ar[i]).ToArray();
+                    }
                 }
             }
             Console.WriteLine("2_10:");
-            for (int i = 0; i < ar2.Length; i++)
-            {
-                Console.Write($"{ar2[i]} ");
+            if (max_ind != -1) {
+                for (int i = 0; i < ar2.Length; i++)
+                {
+                    Console.Write($"{ar2[i]} ");
+                }
             }
-
+            else
+            {
+                for (int i = 0; i < ar.Length; i++)
+                {
+                    Console.Write($"{ar[i]} ");
+                }
+            }
             Console.WriteLine("\n");
             //11
             ar = ar1.Take(ar1.Length).ToArray();
-            int last = 0;
+            int last = -1;
             for (int i = 0; i < ar.Length; i++)
             {
                 if (ar[i] > 0) { last = i; }
             }
+            if( last != -1 ) {
             ar = ar.Append(ar[ar.Length - 1]).ToArray();
             for (int i = ar.Length - 1; i > last + 1; i--)
             {
                 ar[i] = ar[i - 1];
             }
             ar[last + 1] = p;
+            }
             Console.WriteLine("2_11:");
             for (int i = 0; i < ar.Length; i++)
             {
@@ -731,23 +743,29 @@ namespace Lab3
             {
                 next = next.Append(ar2[i]).ToArray();
             }
-            double[] arres = new double[] { };
-            for (int i = 0; i <= k; i++)
-            {
-                arres = arres.Append(ar2[i]).ToArray();
+            if (k < n - 1) {
+                double[] arres = new double[] { };
+                for (int i = 0; i <= k; i++)
+                {
+                    arres = arres.Append(ar2[i]).ToArray();
+                }
+                for (int i = 0; i < m; i++)
+                {
+                    arres = arres.Append(ar3[i]).ToArray();
+                }
+                for (int i = 0; i < next.Length; i++)
+                {
+                    arres = arres.Append(next[i]).ToArray();
+                }
+                Console.WriteLine("2_15:");
+                for (int i = 0; i < arres.Length; i++)
+                {
+                    Console.Write($"{arres[i]} ");
+                }
             }
-            for (int i = 0; i < m; i++)
+            else
             {
-                arres = arres.Append(ar3[i]).ToArray();
-            }
-            for (int i = 0; i < next.Length; i++)
-            {
-                arres = arres.Append(next[i]).ToArray();
-            }
-            Console.WriteLine("2_15:");
-            for (int i = 0; i < arres.Length; i++)
-            {
-                Console.Write($"{arres[i]} ");
+                Console.Write("\n2_15:\nОшибка: в массиве А нет элемента с индексом {0} (k + 1)", k + 1);
             }
 
             Console.WriteLine("\n");
@@ -812,8 +830,15 @@ namespace Lab3
                     }
                 }
             }
-            avg = savg / cavg;
-            Console.WriteLine("2_17:\n{0}", avg);
+            if (cavg != 0)
+            {
+                avg = savg / cavg;
+                Console.WriteLine("2_17:\n{0}", avg);
+            }
+            else
+            {
+                Console.WriteLine("2_17:\nОшибка: искомых чисел (положительных или отрицательных) не найдено");
+            }
 
             Console.WriteLine();
             //18
