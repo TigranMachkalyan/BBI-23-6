@@ -382,7 +382,103 @@ namespace Lab3
 
         static public void Level3_1()
         {
-            
+            Console.WriteLine();
+            //8
+            Console.WriteLine("3_8:");
+            double[,] m = newmat(7, 5);
+            for (int i = 0; i < 7; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    Console.Write($"{m[i, j]} ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("-------------------------");
+            int[] cs = new int[7];
+            for (int i = 0; i < 7; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    if (m[i, j] > 0) { cs[i]++; }
+                }
+            }
+            int tempind;
+            double tempel;
+            for (int i = 0; i < 7; i++)
+            {
+                for (int l = i + 1; l < 7; l++)
+                {
+                    if (cs[i] < cs[l])
+                    {
+                        for (int j = 0; j < 5; j++)
+                        {
+                            tempel = m[i, j];
+                            m[i, j] = m[l, j];
+                            m[l, j] = tempel;
+                        }
+                        tempind = cs[i];
+                        cs[i] = cs[l];
+                        cs[l] = tempind;
+                    }
+                }
+            }
+            for (int i = 0; i < 7; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    Console.Write($"{m[i, j]} ");
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+            //9
+            Console.WriteLine("3_9:");
+            m = newmat(5, 7);
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 7; j++)
+                {
+                    Console.Write($"{m[i, j]} ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("-------------------------");
+            cs = new int[7];
+            for (int j = 0; j < 7; j++)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    if (m[i, j] > 0) { cs[i]++; }
+                }
+            }
+            for (int j = 0; j < 7; j++)
+            {
+                for (int l = j + 1; l < 7; l++)
+                {
+                    if (cs[j] > cs[l])
+                    {
+                        for (int i = 0; i < 5; i++)
+                        {
+                            tempel = m[i, j];
+                            m[i, j] = m[l, j];
+                            m[l, j] = tempel;
+                        }
+                        tempind = cs[j];
+                        cs[j] = cs[l];
+                        cs[l] = tempind;
+                    }
+                }
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 7; j++)
+                {
+                    Console.Write($"{m[i, j]} ");
+                }
+                Console.WriteLine();
+            }
         }
 
         static void Main(string[] args)
