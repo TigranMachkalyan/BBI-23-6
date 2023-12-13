@@ -51,6 +51,18 @@ namespace Lab5
             return data;
         }
 
+        public static double[,] col_diag_swap(double[,] data)
+        {
+            int col_ind = max_col_ind(data);
+            for (int i = 0; i < data.GetLength(0); i++ )
+            {
+                double temp = data[i, i];
+                data[i, i] = data[i, col_ind];
+                data[i, col_ind] = temp;
+            }
+            return data;
+        }
+
         static void Main(string[] args)
         {
             //6
@@ -125,6 +137,29 @@ namespace Lab5
             double[,] res1 = diag_sort(arr1);
             double[,] res2 = diag_sort(arr2);
             Console.WriteLine("18:");
+            for (int i = 0; i < res1.GetLength(0); i++)
+            {
+                for (int j = 0; j < res1.GetLength(1); j++)
+                {
+                    Console.Write($"{res1[i, j]} ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("-----------------");
+            for (int i = 0; i < res2.GetLength(0); i++)
+            {
+                for (int j = 0; j < res2.GetLength(1); j++)
+                {
+                    Console.Write($"{res2[i, j]} ");
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+            //24
+            res1 = col_diag_swap(res1);
+            res2 = col_diag_swap(res2);
+            Console.WriteLine("24:");
             for (int i = 0; i < res1.GetLength(0); i++)
             {
                 for (int j = 0; j < res1.GetLength(1); j++)
