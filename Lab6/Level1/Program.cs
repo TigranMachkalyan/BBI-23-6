@@ -9,23 +9,23 @@ using System.Xml.Serialization;
 // Номер по списку - 18 ==> Этот файл - решение 3-го номера первого уровня.
 namespace Level1
 {
-    // структура Person (человек - номинант, которого выбрал респондент)
-    struct Person
-    {
-        private string name; // Имя номинанта. Для упрощения проверок не будем вводить фамилию и другие данные - предположим что имя однозначно определяет конкретного номинанта.
-        private int count; // Счётчик голосов для каждого номинанта.
-        public string Name { get { return name; } }
-        public int Count { get { return count; } }
-        public Person(string name)
-        {
-            this.name = name;
-            count = 1; // При создании нового номинанта, ему присваивается один голос.
-        }
-        public void Choice() { count++; } // Метод, который добавляет голос номинанту.
-    }
     internal class Program
     {
-        
+        // структура Person (человек - номинант, которого выбрал респондент)
+        struct Person
+        {
+            private string name; // Имя номинанта. Для упрощения проверок не будем вводить фамилию и другие данные - предположим что имя однозначно определяет конкретного номинанта.
+            private int count; // Счётчик голосов для каждого номинанта.
+            public string Name { get { return name; } }
+            public int Count { get { return count; } }
+            public Person(string name)
+            {
+                this.name = name;
+                count = 1; // При создании нового номинанта, ему присваивается один голос.
+            }
+            public void Choice() { count++; } // Метод, который добавляет голос номинанту.
+        }
+
         static void Main(string[] args)
         {
             Person[] persons = { }; // Массив, содержащий объекты номинантов.
