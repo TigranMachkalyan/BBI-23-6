@@ -71,14 +71,14 @@ namespace Level1
             {
                 for (int i = step; i < arr.Length; i++)
                 {
+                    Person temp = arr[i];
                     int j = i;
-                    while ((j >= step) && (arr[j - step] < arr[j]))
+                    while ((j >= step) && (arr[j - step] < temp))
                     {
-                        Person temp = arr[j];
                         arr[j] = arr[j - step];
-                        arr[j - step] = temp;
-                        j = j - step;
+                        j -= step;
                     }
+                    arr[j] = temp;
                 }
                 step /= 2;
             }
