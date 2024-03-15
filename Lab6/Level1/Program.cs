@@ -12,18 +12,26 @@ namespace Level1
     internal class Program
     {
         // структура Person (человек - номинант, которого выбрал респондент)
-        struct Person
+        public struct Person
         {
             private string name; // Имя номинанта. Для упрощения проверок не будем вводить фамилию и другие данные - предположим что имя однозначно определяет конкретного номинанта.
             private int count; // Счётчик голосов для каждого номинанта.
+            private static int overall_c = 0;
             public string Name { get { return name; } }
             public int Count { get { return count; } }
+            public static bool operator >(Person a, Person b) { return a.Count > b.Count; }
+            public static bool operator <(Person a, Person b) { return a.Count < b.Count; }
             public Person(string name)
             {
                 this.name = name;
                 count = 1; // При создании нового номинанта, ему присваивается один голос.
+                overall_c++;
             }
-            public void Choice() { count++; } // Метод, который добавляет голос номинанту.
+            public override string ToString()
+            {
+                return $"{name} - {count * 100 / overall_c}%";
+            }
+            public void Choice() { count++; overall_c++; } // Метод, который добавляет голос номинанту.
         }
 
         static void Main(string[] args)
@@ -33,7 +41,6 @@ namespace Level1
             // Моделирование опроса:
             Console.WriteLine("Кого вы считаете человеком года? (Чтобы завершить опрос и вывести результаты, нажмите ENTER)");
             string response = Console.ReadLine(); // Ответ на вопрос
-            int c = 0; // Счетчик ответов для подсчета процентов
             while (response != "")
             {
                 string[] names = persons.Select(x => x.Name).ToArray();
@@ -45,16 +52,35 @@ namespace Level1
                 {
                     persons = persons.Append(new Person(response)).ToArray(); // Так как объект еще не создан, то создаем его.
                 }
-                c++;
                 response = Console.ReadLine();
             }
 
             // Вывод результатов:
-            var sorted = persons.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
-            for (int i = 0; i < Math.Min(5, sorted.Length); i++)
+            ShellSortDesc(persons); // Сортируем номинантов по количеству голосов по убыванию.
+            for (int i = 0; i < Math.Min(5, persons.Length); i++)
             {
-                Console.Write($"{i + 1}. {sorted[i].Name} - {sorted[i].Count*100/c}%");
+                Console.Write($"{i + 1}. {persons[i]}");
                 Console.WriteLine();
+            }
+        }
+
+        public static void ShellSortDesc(Person[] arr)
+        {
+            int step = arr.Length / 2;
+            while (step >= 1)
+            {
+                for (int i = step; i < arr.Length; i++)
+                {
+                    int j = i;
+                    while ((j >= step) && (arr[j - step] < arr[j]))
+                    {
+                        Person temp = arr[j];
+                        arr[j] = arr[j - step];
+                        arr[j - step] = temp;
+                        j = j - step;
+                    }
+                }
+                step /= 2;
             }
         }
     }
