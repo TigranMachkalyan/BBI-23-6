@@ -1,0 +1,21 @@
+C:\Users\tigop\Рабочий стол\Coding\progmisis\BBI-23-6\Lab6\Level1\bin\Debug\Level1.exe.config
+C:\Users\tigop\Рабочий стол\Coding\progmisis\BBI-23-6\Lab6\Level1\bin\Debug\Level1.exe
+C:\Users\tigop\Рабочий стол\Coding\progmisis\BBI-23-6\Lab6\Level1\bin\Debug\Level1.pdb
+C:\Users\tigop\Рабочий стол\Coding\progmisis\BBI-23-6\Lab6\Level1\obj\Debug\Level1.csproj.AssemblyReference.cache
+C:\Users\tigop\Рабочий стол\Coding\progmisis\BBI-23-6\Lab6\Level1\obj\Debug\Level1.csproj.CoreCompileInputs.cache
+C:\Users\tigop\Рабочий стол\Coding\progmisis\BBI-23-6\Lab6\Level1\obj\Debug\Level1.exe
+C:\Users\tigop\Рабочий стол\Coding\progmisis\BBI-23-6\Lab6\Level1\obj\Debug\Level1.pdb
+C:\Users\m2305719\Source\Repos\BBI-23-6\Lab6\Level1\bin\Debug\Level1.exe.config
+C:\Users\m2305719\Source\Repos\BBI-23-6\Lab6\Level1\bin\Debug\Level1.exe
+C:\Users\m2305719\Source\Repos\BBI-23-6\Lab6\Level1\bin\Debug\Level1.pdb
+C:\Users\m2305719\Source\Repos\BBI-23-6\Lab6\Level1\obj\Debug\Level1.csproj.AssemblyReference.cache
+C:\Users\m2305719\Source\Repos\BBI-23-6\Lab6\Level1\obj\Debug\Level1.csproj.CoreCompileInputs.cache
+C:\Users\m2305719\Source\Repos\BBI-23-6\Lab6\Level1\obj\Debug\Level1.exe
+C:\Users\m2305719\Source\Repos\BBI-23-6\Lab6\Level1\obj\Debug\Level1.pdb
+D:\Coding\progmisis\BBI-23-6\Lab7\Level1\bin\Debug\Level1.exe.config
+D:\Coding\progmisis\BBI-23-6\Lab7\Level1\bin\Debug\Level1.exe
+D:\Coding\progmisis\BBI-23-6\Lab7\Level1\bin\Debug\Level1.pdb
+D:\Coding\progmisis\BBI-23-6\Lab7\Level1\obj\Debug\Level1.csproj.AssemblyReference.cache
+D:\Coding\progmisis\BBI-23-6\Lab7\Level1\obj\Debug\Level1.csproj.CoreCompileInputs.cache
+D:\Coding\progmisis\BBI-23-6\Lab7\Level1\obj\Debug\Level1.exe
+D:\Coding\progmisis\BBI-23-6\Lab7\Level1\obj\Debug\Level1.pdb
