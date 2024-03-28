@@ -10,11 +10,10 @@ namespace Level3
     // Номер по списку - 18 ==> Этот файл - решение 6-го номера третьего уровня.
     class Country // Структура ответа на вопрос
     {
-        public static int c1, c2, c3;
         private string text; // Сам ответ
         private int count; // Счетчик голосов за этот ответ
         public string Text { get { return text; } }
-        public int Count { get { return count; } }
+        public int Count { get { return count; } set { count = value; } }
         public Country(string text, int a)
         {
             this.text = text;
@@ -24,92 +23,23 @@ namespace Level3
     }
     class Russia: Country
     {
-        static readonly string name_of_country = "Russia";
-        public static int cr1, cr2, cr3;
         public Russia(string text, int a): base(text, a)
         {
-            switch (a)
-            {
-                case 1:
-                    cr1++;
-                    Country.c1++;
-                    break;
-                case 2:
-                    cr2++;
-                    Country.c2++;
-                    break;
-                case 3:
-                    cr3++;
-                    Country.c3++;
-                    break;
-            }
-        }
-        public override void Choice(int value)
-        {
-            base.Choice(value);
-            switch (value)
-            {
-                case 1:
-                    cr1++;
-                    Country.c1++;
-                    break;
-                case 2:
-                    cr2++;
-                    Country.c2++;
-                    break;
-                case 3:
-                    cr3++;
-                    Country.c3++;
-                    break;
-            }
         }
     }
     class Japan: Country
     {
-        static readonly string name_of_country = "Japan";
-        public static int cr1, cr2, cr3;
         public Japan(string text, int a) : base(text, a)
-        {
-            switch (a)
-            {
-                case 1:
-                    cr1++;
-                    Country.c1++;
-                    break;
-                case 2:
-                    cr2++;
-                    Country.c2++;
-                    break;
-                case 3:
-                    cr3++;
-                    Country.c3++;
-                    break;
-            }
-        }
-        public override void Choice(int value)
-        {
-            base.Choice(value);
-            switch (value)
-            {
-                case 1:
-                    cr1++;
-                    Country.c1++;
-                    break;
-                case 2:
-                    cr2++;
-                    Country.c2++;
-                    break;
-                case 3:
-                    cr3++;
-                    Country.c3++;
-                    break;
-            }
+        {   
         }
     }
     internal class Program
     {
         static void Main(string[] args)
         {
+            int[] cr = new int[3] { 0, 0, 0 };
+            int[] cj = new int[3] { 0, 0, 0 };
+            int[] cs = new int[3] { 0, 0, 0 };
             Country[] russia1 = { };
             Country[] russia2 = { };
             Country[] russia3 = { };
@@ -138,6 +68,8 @@ namespace Level3
                     {
                         russia1 = russia1.Append(new Russia(answer, 1)).ToArray();
                     }
+                    cr[0]++;
+                    cs[0]++;
                 }
                 
                 Console.WriteLine("Какая черта характера присуща россиянам больше всего?");
@@ -153,6 +85,8 @@ namespace Level3
                     {
                         russia2 = russia2.Append(new Russia(answer, 2)).ToArray();
                     }
+                    cr[1]++;
+                    cs[1]++;
                 }
                 Console.WriteLine("Какай неодушевленный предмет или понятие Вы связываете с Россией?");
                 answer = Console.ReadLine();
@@ -167,6 +101,8 @@ namespace Level3
                     {
                         russia3 = russia3.Append(new Russia(answer, 3)).ToArray();
                     }
+                    cr[2]++;
+                    cs[2]++;
                 }
                 Console.WriteLine("Какое животное Вы связываете с Японией и японцами?");
                 answer = Console.ReadLine();
@@ -181,6 +117,8 @@ namespace Level3
                     {
                         japan1 = japan1.Append(new Japan(answer, 1)).ToArray();
                     }
+                    cj[0]++;
+                    cs[0]++;
                 }
 
                 Console.WriteLine("Какая черта характера присуща японцам больше всего?");
@@ -196,6 +134,8 @@ namespace Level3
                     {
                         japan2 = japan2.Append(new Japan(answer, 2)).ToArray();
                     }
+                    cj[1]++;
+                    cs[1]++;
                 }
                 Console.WriteLine("Какай неодушевленный предмет или понятие Вы связываете с Японцами?");
                 answer = Console.ReadLine();
@@ -210,6 +150,8 @@ namespace Level3
                     {
                         japan3 = japan3.Append(new Japan(answer, 3)).ToArray();
                     }
+                    cj[2]++;
+                    cs[2]++;
                 }
                 Console.WriteLine();
             }
@@ -221,7 +163,7 @@ namespace Level3
             var sorted = russia1.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
             for (int i = 0; i < Math.Min(5, sorted.Length); i++)
             {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / Russia.cr1}%");
+                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cr[0]}%");
                 Console.WriteLine();
             }
             Console.WriteLine();
@@ -229,7 +171,7 @@ namespace Level3
             sorted = russia2.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
             for (int i = 0; i < Math.Min(5, sorted.Length); i++)
             {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / Russia.cr2}%");
+                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cr[1]}%");
                 Console.WriteLine();
             }
             Console.WriteLine();
@@ -237,7 +179,7 @@ namespace Level3
             sorted = russia3.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
             for (int i = 0; i < Math.Min(5, sorted.Length); i++)
             {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / Russia.cr3}%");
+                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cr[2]}%");
                 Console.WriteLine();
             }
             Console.WriteLine();
@@ -246,7 +188,7 @@ namespace Level3
             sorted = japan1.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
             for (int i = 0; i < Math.Min(5, sorted.Length); i++)
             {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / Japan.cr1}%");
+                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cj[0]}%");
                 Console.WriteLine();
             }
             Console.WriteLine();
@@ -254,7 +196,7 @@ namespace Level3
             sorted = japan2.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
             for (int i = 0; i < Math.Min(5, sorted.Length); i++)
             {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / Japan.cr2}%");
+                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cj[1]}%");
                 Console.WriteLine();
             }
             Console.WriteLine();
@@ -262,32 +204,56 @@ namespace Level3
             sorted = japan3.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
             for (int i = 0; i < Math.Min(5, sorted.Length); i++)
             {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / Japan.cr3}%");
+                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cj[2]}%");
                 Console.WriteLine();
             }
             Console.WriteLine();
             Console.WriteLine("Общее:");
-            Country[] all1 = { };
-            Country[] all2 = { };
-            Country[] all3 = { };
-            for (int i = 0; i < russia1.Length; i++)
+            var all1 = new List<Country> (russia1);
+            var temp = russia1.Select(x => x.Text).ToList();
+            foreach (var country in japan1)
             {
-                try
+                if (temp.Contains(country.Text))
                 {
-                    all1 = all1.Append(russia1[i]).ToArray();
-                    all2 = all2.Append(russia2[i]).ToArray();
-                    all3 = all3.Append(russia3[i]).ToArray();
-                    all1 = all1.Append(japan1[i]).ToArray();
-                    all2 = all2.Append(japan2[i]).ToArray();
-                    all3 = all3.Append(japan3[i]).ToArray();
+                    all1[temp.IndexOf(country.Text)].Count += country.Count;
                 }
-                catch { };
+                else
+                {
+                    all1.Add(country);
+                }
             }
+            var all2 = new List<Country>(russia2);
+            temp = russia2.Select(x => x.Text).ToList();
+            foreach (var country in japan2)
+            {
+                if (temp.Contains(country.Text))
+                {
+                    all2[temp.IndexOf(country.Text)].Count += country.Count;
+                }
+                else
+                {
+                    all2.Add(country);
+                }
+            }
+            var all3 = new List<Country>(russia3);
+            temp = russia3.Select(x => x.Text).ToList();
+            foreach (var country in japan3)
+            {
+                if (temp.Contains(country.Text))
+                {
+                    all3[temp.IndexOf(country.Text)].Count += country.Count;
+                }
+                else
+                {
+                    all3.Add(country);
+                }
+            }
+
             Console.WriteLine("Вопрос 1");
             sorted = all1.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
             for (int i = 0; i < Math.Min(5, sorted.Length); i++)
             {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / Country.c1}%");
+                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cs[0]}%");
                 Console.WriteLine();
             }
             Console.WriteLine();
@@ -295,7 +261,7 @@ namespace Level3
             sorted = all2.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
             for (int i = 0; i < Math.Min(5, sorted.Length); i++)
             {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / Country.c2}%");
+                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cs[1]}%");
                 Console.WriteLine();
             }
             Console.WriteLine();
@@ -303,7 +269,7 @@ namespace Level3
             sorted = all3.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
             for (int i = 0; i < Math.Min(5, sorted.Length); i++)
             {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / Country.c3}%");
+                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cs[2]}%");
                 Console.WriteLine();
             }
         }
