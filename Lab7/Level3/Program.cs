@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design.Serialization;
 using System.Linq;
@@ -21,16 +21,16 @@ namespace Level3
         }
         public virtual void Choice(int a) { count++; } // Метод, который добавляет голос ответу.
     }
-    class Russia: Country
+    class Russia : Country
     {
-        public Russia(string text, int a): base(text, a)
+        public Russia(string text, int a) : base(text, a)
         {
         }
     }
-    class Japan: Country
+    class Japan : Country
     {
         public Japan(string text, int a) : base(text, a)
-        {   
+        {
         }
     }
     internal class Program
@@ -57,7 +57,7 @@ namespace Level3
                 Console.WriteLine($"Человек {i + 1}:");
                 Console.WriteLine("Какое животное Вы связываете с Россией и россиянами?");
                 string answer = Console.ReadLine();
-                if ( answer != "" )
+                if (answer != "")
                 {
                     string[] answers = russia1.Select(x => x.Text).ToArray();
                     if (answers.Contains(answer))
@@ -71,7 +71,7 @@ namespace Level3
                     cr[0]++;
                     cs[0]++;
                 }
-                
+
                 Console.WriteLine("Какая черта характера присуща россиянам больше всего?");
                 answer = Console.ReadLine();
                 if (answer != "")
@@ -159,57 +159,33 @@ namespace Level3
             Console.WriteLine();
             // Вывод результатов:
             Console.WriteLine("Россия:");
-            Console.WriteLine("Вопрос 1");
-            var sorted = russia1.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
-            for (int i = 0; i < Math.Min(5, sorted.Length); i++)
+            List<Country[]> russia_all = new List<Country[]> { russia1, russia2, russia3};
+            for (int i = 1; i < 4; i++)
             {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cr[0]}%");
+                Console.WriteLine($"Вопрос {i}");
+                var sorted = russia_all[i - 1].OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
+                for (int j = 0; j < Math.Min(5, sorted.Length); j++)
+                {
+                    Console.Write($"{j + 1}. {sorted[j].Text} - {sorted[j].Count * 100 / cr[0]}%");
+                    Console.WriteLine();
+                }
                 Console.WriteLine();
             }
-            Console.WriteLine();
-            Console.WriteLine("Вопрос 2");
-            sorted = russia2.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
-            for (int i = 0; i < Math.Min(5, sorted.Length); i++)
-            {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cr[1]}%");
-                Console.WriteLine();
-            }
-            Console.WriteLine();
-            Console.WriteLine("Вопрос 3");
-            sorted = russia3.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
-            for (int i = 0; i < Math.Min(5, sorted.Length); i++)
-            {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cr[2]}%");
-                Console.WriteLine();
-            }
-            Console.WriteLine();
             Console.WriteLine("Япония:");
-            Console.WriteLine("Вопрос 1");
-            sorted = japan1.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
-            for (int i = 0; i < Math.Min(5, sorted.Length); i++)
+            List<Country[]> japan_all = new List<Country[]> { japan1, japan2, japan3 };
+            for (int i = 1; i < 4; i++)
             {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cj[0]}%");
+                Console.WriteLine($"Вопрос {i}");
+                var sorted = japan_all[i - 1].OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
+                for (int j = 0; j < Math.Min(5, sorted.Length); j++)
+                {
+                    Console.Write($"{j + 1}. {sorted[j].Text} - {sorted[j].Count * 100 / cr[0]}%");
+                    Console.WriteLine();
+                }
                 Console.WriteLine();
             }
-            Console.WriteLine();
-            Console.WriteLine("Вопрос 2");
-            sorted = japan2.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
-            for (int i = 0; i < Math.Min(5, sorted.Length); i++)
-            {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cj[1]}%");
-                Console.WriteLine();
-            }
-            Console.WriteLine();
-            Console.WriteLine("Вопрос 3");
-            sorted = japan3.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
-            for (int i = 0; i < Math.Min(5, sorted.Length); i++)
-            {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cj[2]}%");
-                Console.WriteLine();
-            }
-            Console.WriteLine();
             Console.WriteLine("Общее:");
-            var all1 = new List<Country> (russia1);
+            var all1 = new List<Country>(russia1);
             var temp = russia1.Select(x => x.Text).ToList();
             foreach (var country in japan1)
             {
@@ -250,26 +226,26 @@ namespace Level3
             }
 
             Console.WriteLine("Вопрос 1");
-            sorted = all1.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
-            for (int i = 0; i < Math.Min(5, sorted.Length); i++)
+            var sorted_all = all1.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
+            for (int i = 0; i < Math.Min(5, sorted_all.Length); i++)
             {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cs[0]}%");
+                Console.Write($"{i + 1}. {sorted_all[i].Text} - {sorted_all[i].Count * 100 / cs[0]}%");
                 Console.WriteLine();
             }
             Console.WriteLine();
             Console.WriteLine("Вопрос 2");
-            sorted = all2.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
-            for (int i = 0; i < Math.Min(5, sorted.Length); i++)
+            sorted_all = all2.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
+            for (int i = 0; i < Math.Min(5, sorted_all.Length); i++)
             {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cs[1]}%");
+                Console.Write($"{i + 1}. {sorted_all[i].Text} - {sorted_all[i].Count * 100 / cs[1]}%");
                 Console.WriteLine();
             }
             Console.WriteLine();
             Console.WriteLine("Вопрос 3");
-            sorted = all3.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
-            for (int i = 0; i < Math.Min(5, sorted.Length); i++)
+            sorted_all = all3.OrderByDescending(ob => ob.Count).ToArray(); // Сортируем номинантов по количеству голосов по убыванию.
+            for (int i = 0; i < Math.Min(5, sorted_all.Length); i++)
             {
-                Console.Write($"{i + 1}. {sorted[i].Text} - {sorted[i].Count * 100 / cs[2]}%");
+                Console.Write($"{i + 1}. {sorted_all[i].Text} - {sorted_all[i].Count * 100 / cs[2]}%");
                 Console.WriteLine();
             }
         }
