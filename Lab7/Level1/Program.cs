@@ -33,7 +33,51 @@ namespace Level1
                 Console.WriteLine($"{name} - {count * 100 / overall_c}%");
             }
             public virtual void Choice() { count++; overall_c++; } // Метод, который добавляет голос номинанту.
-        }
+            static Person[] MergeSort(Person[] arr, int left, int right)
+            {
+                if (left < right)
+                {
+                    int middle = left + (right - left) / 2;
+                    MergeSort(arr, left, middle);
+                    MergeSort(arr, middle + 1, right);
+                    MergeArray(arr, left, middle, right);
+                }
+                return arr;
+            }
+            static void MergeArray(Person[] array, int left, int middle, int right)
+            {
+                var leftArrayLength = middle - left + 1;
+                var rightArrayLength = right - middle;
+                var leftTempArray = new Person[leftArrayLength];
+                var rightTempArray = new Person[rightArrayLength];
+                int i, j;
+                for (i = 0; i < leftArrayLength; ++i)
+                    leftTempArray[i] = array[left + i];
+                for (j = 0; j < rightArrayLength; ++j)
+                    rightTempArray[j] = array[middle + 1 + j];
+                i = 0;
+                j = 0;
+                int k = left;
+                while (i < leftArrayLength && j < rightArrayLength)
+                {
+                    if (leftTempArray[i] > rightTempArray[j])
+                    {
+                        array[k++] = leftTempArray[i++];
+                    }
+                    else
+                    {
+                        array[k++] = rightTempArray[j++];
+                    }
+                }
+                while (i < leftArrayLength)
+                {
+                    array[k++] = leftTempArray[i++];
+                }
+                while (j < rightArrayLength)
+                {
+                    array[k++] = rightTempArray[j++];
+                }
+            }
 
         class Man_of_The_Year: Person
         {
@@ -108,8 +152,8 @@ namespace Level1
 
 
             // Вывод результатов:
-            ShellSortDesc(persons1); // Сортируем номинантов по количеству голосов по убыванию.
-            ShellSortDesc(persons2); // Сортируем номинантов по количеству голосов по убыванию.
+            Person.MergeSort(persons1, 0, persons1.Length-1); // Сортируем номинантов по количеству голосов по убыванию.
+            Person.MergeSort(persons2, 0, persons2.Length-1); // Сортируем номинантов по количеству голосов по убыванию.
             Console.WriteLine("Человек года:");
             for (int i = 0; i < Math.Min(5, persons1.Length); i++)
             {
@@ -123,26 +167,7 @@ namespace Level1
                 Console.Write($"{i + 1}. ");
                 persons2[i].Display();
             }
-        }
-
-        public static void ShellSortDesc(Person[] arr)
-        {
-            int step = arr.Length / 2;
-            while (step >= 1)
-            {
-                for (int i = step; i < arr.Length; i++)
-                {
-                    Person temp = arr[i];
-                    int j = i;
-                    while ((j >= step) && (arr[j - step] < temp))
-                    {
-                        arr[j] = arr[j - step];
-                        j -= step;
-                    }
-                    arr[j] = temp;
-                }
-                step /= 2;
-            }
+        }       
         }
     }
 }
