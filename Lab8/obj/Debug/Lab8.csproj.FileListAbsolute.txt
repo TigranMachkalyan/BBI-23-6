@@ -1,0 +1,7 @@
+D:\Coding\progmisis\BBI-23-6\Lab8\bin\Debug\Lab8.exe.config
+D:\Coding\progmisis\BBI-23-6\Lab8\bin\Debug\Lab8.exe
+D:\Coding\progmisis\BBI-23-6\Lab8\bin\Debug\Lab8.pdb
+D:\Coding\progmisis\BBI-23-6\Lab8\obj\Debug\Lab8.csproj.AssemblyReference.cache
+D:\Coding\progmisis\BBI-23-6\Lab8\obj\Debug\Lab8.csproj.CoreCompileInputs.cache
+D:\Coding\progmisis\BBI-23-6\Lab8\obj\Debug\Lab8.exe
+D:\Coding\progmisis\BBI-23-6\Lab8\obj\Debug\Lab8.pdb
