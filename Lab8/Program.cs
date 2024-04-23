@@ -63,7 +63,7 @@ namespace Lab8
                 }
                 foreach (string slice in slices)
                 {
-                    res = res + slice + "|";
+                    res = res + slice + "\n";
                 }
             }
         }
@@ -124,9 +124,52 @@ namespace Lab8
                 }
             }
         }
-        class Task_12
+        class Task_12: Task
         {
-
+            public Task_12(string text) : base(text)
+            {
+                Do_The_Task(_text, out _res);
+            }
+            private void Do_The_Task(string text, out string res)
+            {
+                res = "";
+                string res1 = text;
+                string[] words = text.Split(new char[] { ' ', ',', '.' });
+                var codes = new Dictionary<string, int>();
+                int c = 0;
+                codes.Add(words[0], c);
+                res1 = $"~{codes[words[0]]}~" + res1.Substring(words[0].Length);
+                c++;
+                foreach (var word in words)
+                {
+                    if (word != "")
+                    {
+                        if (codes.ContainsKey(word))
+                        {
+                            foreach (char delimeter in new char[] { ' ', ',', '.'})
+                            {
+                                res1 = res1.Replace($" {word}{delimeter}", $" ~{codes[word]}~{delimeter}");
+                            }
+                        }
+                        else
+                        {
+                            codes.Add(word, c);
+                            foreach (char delimeter in new char[] { ' ', ',', '.' })
+                            {
+                                res1 = res1.Replace($" {word}{delimeter}", $" ~{codes[word]}~{delimeter}");
+                            }
+                            c++;
+                        }
+                    }
+                }
+                res += res1 + "\n------------------------\n";
+                string res2 = res1;
+                foreach (var code in codes)
+                {
+                    res2 = res2.Replace($"~{code.Value}~", code.Key);
+                }
+                res += res2;
+            }
         }
         class Task_13: Task
         {
@@ -188,33 +231,35 @@ namespace Lab8
 
         static void Main(string[] args)
         {
+            string t = "После многолетних исследований ученые обнаружили тревожную тенденцию в вырубке лесов Амазонии. Анализ данных показал, что основной участник разрушения лесного покрова – человеческая деятельность. За последние десятилетия рост объема вырубки достиг критических показателей. Главными факторами, способствующими этому, являются промышленные рубки, производство древесины, расширение сельскохозяйственных угодий и незаконная добыча древесины. Это приводит к серьезным экологическим последствиям, таким как потеря биоразнообразия, ухудшение климата и угроза вымирания многих видов животных и растений.";
+
             Console.WriteLine("Задание 8:");
-            var example_8 = new Task_8("После многолетних исследований ученые обнаружили тревожную тенденцию в вырубке лесов Амазонии. Анализ данных показал, что основной участник разрушения лесного покрова – человеческая деятельность. За последние десятилетия рост объема вырубки достиг критических показателей. Главными факторами, способствующими этому, являются промышленные рубки, производство древесины, расширение сельскохозяйственных угодий и незаконная добыча древесины. Это приводит к серьезным экологическим последствиям, таким как потеря биоразнообразия, ухудшение климата и угроза вымирания многих видов животных и растений.");
+            var example_8 = new Task_8(t);
             Console.WriteLine(example_8);
             Console.WriteLine();
 
             Console.WriteLine("Задание 9:");
-            var example_9 = new Task_9("Двигатель самолета – это сложная инженерная конструкция, обеспечивающая подъем, управление и движение в воздухе. Он состоит из множества компонентов, каждый из которых играет важную роль в общей работе механизма. Внутреннее устройство двигателя включает в себя компрессор, камеру сгорания, турбину и системы управления и охлаждения. Принцип работы основан на воздушно-топливной смеси, которая подвергается сжатию, воспламенению и расширению, обеспечивая движение воздушного судна.");
+            var example_9 = new Task_9(t);
             Console.WriteLine(example_9);
             Console.WriteLine();
 
             Console.WriteLine("Задание 10:");
-            var example_10 = new Task_10("1 июля 2015 года Греция объявила о дефолте по государственному долгу, став первой развитой страной в истории, которая не смогла выплатить свои долговые обязательства в полном объеме. Сумма дефолта составила порядка 1,6 миллиарда евро. Этому предшествовали долгие переговоры с международными кредиторами, такими как Международный валютный фонд (МВФ), Европейский центральный банк (ЕЦБ) и Европейская комиссия (ЕК), о программах финансовой помощи и реструктуризации долга. Основными причинами дефолта стали недостаточная эффективность реформ, направленных на улучшение финансовой стабильности страны, а также политическая нестабильность, что вызвало потерю доверия со стороны международных инвесторов и кредиторов. Последствия дефолта оказались глубокими и долгосрочными: сокращение кредитного рейтинга страны, увеличение затрат на заемный капитал, рост стоимости заимствований и утрата доверия со стороны международных инвесторов.");
+            var example_10 = new Task_10(t);
             Console.WriteLine(example_10);
             Console.WriteLine();
 
-            /*Console.WriteLine("Задание 12:");
-            var example_12 = new Task_12("Фьорды – это ущелья, формирующиеся ледниками и заполняющиеся морской водой. Название происходит от древнескандинавского слова "fjǫrðr". Эти глубокие заливы, окруженные высокими горами, представляют захватывающие виды и природную красоту. Они популярны среди туристов и известны под разными названиями: в Норвегии – "фьорды", в Шотландии – "фьордс", в Исландии – "фьордар". Фьорды играют важную роль в культуре и туризме региона, продолжая вдохновлять людей со всего мира.");
+            Console.WriteLine("Задание 12:");
+            var example_12 = new Task_12(t);
             Console.WriteLine(example_12);
-            Console.WriteLine();*/
+            Console.WriteLine();
 
             Console.WriteLine("Задание 13:");
-            var example_13 = new Task_13("William Shakespeare, widely regarded as one of the greatest writers in the English language, authored a total of 37 plays, along with numerous poems and sonnets. He was born in Stratford-upon-Avon, England, in 1564, and died in 1616. Shakespeare's most famous works, including \"Romeo and Juliet,\" \"Hamlet,\" \"Macbeth,\" and \"Othello,\" were written during the late 16th and early 17th centuries. \"Romeo and Juliet,\" a tragic tale of young love, was penned around 1595. \"Hamlet,\" one of his most celebrated tragedies, was written in the early 1600s, followed by \"Macbeth,\" a gripping drama exploring themes of ambition and power, around 1606. \"Othello,\" a tragedy revolving around jealousy and deceit, was also composed during this period, believed to be around 1603.");
+            var example_13 = new Task_13(t);
             Console.WriteLine(example_13);
             Console.WriteLine();
 
             Console.WriteLine("Задание 15:");
-            var example_15 = new Task_15("Первое кругосветное путешествие было осуществлено флотом, возглавляемым португальским исследователем Фернаном Магелланом. Путешествие началось 20 сентября 1519 года, когда флот, состоящий из пяти кораблей и примерно 270 человек, отправился из порту Сан-Лукас в Испании. Хотя Магеллан не закончил свое путешествие из-за гибели в битве на Филиппинах в 1521 году, его экспедиция стала первой, которая успешно обогнула Землю и доказала ее круглую форму. Это путешествие открыло новые морские пути и имело огромное значение для картографии и географических открытий.");
+            var example_15 = new Task_15(t);
             Console.WriteLine(example_15);
             Console.WriteLine();
         }
