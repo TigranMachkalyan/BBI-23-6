@@ -54,16 +54,9 @@ namespace Lab8
                     slices = slices.Append(sub).ToArray();
                 }
                 slices[slices.Length - 1] += words[words.Length - 1];
-                for (i  = 0; i < slices.Length; i++)
-                {
-                    if (slices[i].Length < 50)
-                    {
-                        slices[i] += new string(' ', 50 - slices[i].Length); ;
-                    }
-                }
                 foreach (string slice in slices)
                 {
-                    res = res + slice + "\n";
+                    res = res + $"{slice, 50}" + "\n";
                 }
             }
         }
