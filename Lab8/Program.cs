@@ -7,6 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
+using System.Xml.Serialization;
 
 namespace Lab8
 {
@@ -54,9 +55,16 @@ namespace Lab8
                     slices = slices.Append(sub).ToArray();
                 }
                 slices[slices.Length - 1] += words[words.Length - 1];
-                foreach (string slice in slices)
+                for (i = 0; i < slices.Length; i++)
                 {
-                    res = res + $"{slice, 50}" + "\n";
+                    slices[i] = slices[i].Substring(0, slices[i].Length - 1);
+                    int count_spaces = slices[i].Count(x => (x == ' '));
+                    if (count_spaces > 0)
+                    {
+                        slices[i] = slices[i].Replace(" ", new string(' ', 1 + (49 - slices[i].Length) / count_spaces));
+                    }
+                    slices[i] += new string(' ', 50 - slices[i].Length);
+                    res = res + slices[i] + "\n";
                 }
             }
         }
