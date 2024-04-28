@@ -63,6 +63,18 @@ namespace Lab8
                     {
                         slices[i] = slices[i].Replace(" ", new string(' ', 1 + (49 - slices[i].Length) / count_spaces));
                     }
+                    int ost = (49 - slices[i].Length) % count_spaces;
+                    int j = 0;
+                    while(ost > 0)
+                    {
+                        if (slices[i][j] == ' ' & slices[i][j + 1] != ' ')
+                        {
+                            slices[i] = slices[i].Substring(0, j + 1) + ' ' + slices[i].Substring(j + 1);
+                            j++;
+                            ost--;
+                        }
+                        j++;
+                    }
                     slices[i] += new string(' ', 50 - slices[i].Length);
                     res = res + slices[i] + "\n";
                 }
