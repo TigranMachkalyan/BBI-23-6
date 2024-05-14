@@ -6,6 +6,7 @@ namespace Lab10
     abstract class FoodProduct
     {
         protected string _name;
+        public string Name { get { return _name; } }
         protected int _weight;
         protected DateTime _expiryDate;
         public FoodProduct(string name, int weight, string date)
@@ -47,6 +48,14 @@ namespace Lab10
         public static bool operator !=(FoodProduct a, FoodProduct b)
         {
             return !(a == b);
+        }
+        public static bool operator >(FoodProduct a, FoodProduct b)
+        {
+            return (a._name.CompareTo(b._name) == 1);
+        }
+        public static bool operator <(FoodProduct a, FoodProduct b)
+        {
+            return (a._name.CompareTo(b._name) == -1);
         }
     }
     class Vegetable : FoodProduct

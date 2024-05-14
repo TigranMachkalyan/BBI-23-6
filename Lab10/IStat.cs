@@ -7,7 +7,7 @@ namespace Lab10
     {
         int Max();
         int Min();
-        decimal Avg();
-        int Med();
+        double Avg();
+        double Med();
     }
 }

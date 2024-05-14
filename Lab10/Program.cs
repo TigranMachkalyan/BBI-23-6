@@ -22,6 +22,7 @@ namespace Lab10
             }
             var json = new MyJsonSerializer();
             var xml = new MyXmlSerializer();
+            var binary = new MyBinarySerializer();
             FoodQualityAnalyzer analyzer = new FoodQualityAnalyzer();
             int analysis_i = 1;
             analyzer.Add(new Vegetable("Огурец", 100, "26.05.2024", true, false));
@@ -33,10 +34,11 @@ namespace Lab10
             analyzer.Add(new Meat("Говядина", 2000, "19.05.2024", false, true), 3);
             json.Write(analyzer.GetStat(), Path.Combine(raw_path, $"raw_data_{analysis_i}.json"));
             analysis_i++;
-            analyzer.Add(new Bakery("Тульский пряник со сгущенкой", 200, "18.05.2024", "Пряники", true), 4);
+            analyzer.Add(new Bakery("Тульский пряник со сгущенкой", 200, "17.05.2024", "Пряники", true), 4);
             json.Write(analyzer.GetStat(), Path.Combine(raw_path, $"raw_data_{analysis_i}.json"));
             json.Write(analyzer.GetStat(), Path.Combine(final_path, $"stat_data_{analysis_i}.json"));
             xml.Write(analyzer.GetStat(), Path.Combine(final_path, $"stat_data_{analysis_i}.xml"));
+            binary.Write(analyzer.GetStat(), Path.Combine(final_path, $"stat_data_{analysis_i}.bin"));
             int final_i = analysis_i;
             analysis_i++;
             analyzer.Delete(new Vegetable("Огурец", 100, "26.05.2024", true, false));
@@ -50,6 +52,10 @@ namespace Lab10
             Console.WriteLine("------------------------");
             res = xml.Read<string[]>(Path.Combine(final_path, $"stat_data_{final_i}.xml"));
             foreach (var item in res) { Console.WriteLine(item); }
+            Console.WriteLine("-------------------------");
+            res = binary.Read<string[]>(Path.Combine(final_path, $"stat_data_{final_i}.bin"));
+            foreach (var item in res) { Console.WriteLine(item); }
+            Console.WriteLine("-------------------------");
         }
     }
 }

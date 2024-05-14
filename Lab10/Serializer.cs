@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text.Json;
 using System.Xml.Serialization;
 using System.IO;
+using ProtoBuf;
 
 namespace Lab10
 {
@@ -42,6 +43,23 @@ namespace Lab10
             using (var fs = new FileStream(filepath, FileMode.OpenOrCreate))
             {
                 serializer.Serialize(fs, obj);
+            }
+        }
+    }
+    class MyBinarySerializer : MySerializer
+    {
+        public override T Read<T>(string filepath)
+        {
+            using (var fs = new FileStream(filepath, FileMode.OpenOrCreate))
+            {
+                return Serializer.Deserialize<T>(fs);
+            }
+        }
+        public override void Write<T>(T obj, string filepath)
+        {
+            using (var fs = new FileStream(filepath, FileMode.OpenOrCreate))
+            {
+                Serializer.Serialize(fs, obj);
             }
         }
     }
