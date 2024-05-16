@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace Lab10
 {
@@ -35,7 +37,7 @@ namespace Lab10
         {
             return $"Название: {_name}\nМасса: {_weight} г\nСрок годности истекает: {_expiryDate.ToString("dd.MM.yyyy")}";
         }
-        public static bool operator == (FoodProduct a, FoodProduct b)
+        public static bool operator ==(FoodProduct a, FoodProduct b)
         {
             if (a._name == b._name && a._weight == b._weight && a._expiryDate == b._expiryDate) {
                 return true;
@@ -72,8 +74,8 @@ namespace Lab10
             int res;
             int days = FoodProduct.DaysToShelf(_expiryDate);
             if (days >= 20) { res = 10; }
-            else if (days < 0) {  res = 0; }
-            else { res = days/2 + 1; }
+            else if (days < 0) { res = 0; }
+            else { res = days / 2 + 1; }
             return res;
         }
         public override string ToString()
@@ -127,7 +129,7 @@ namespace Lab10
             int days = FoodProduct.DaysToShelf(_expiryDate);
             if (days >= 15) { res = 10; }
             else if (days < 0) { res = 0; }
-            else { res = (int)Math.Round(days/1.5); }
+            else { res = (int)Math.Round(days / 1.5); }
             return res;
         }
         public override string ToString()
@@ -138,6 +140,45 @@ namespace Lab10
             if (_halal) { h = "Да"; }
             else { h = "Нет"; }
             return $"Название: {_name}\nМасса: {_weight} г\nНарезанное: {s}\nХаляль: {h}\nСрок годности истекает: {_expiryDate.ToString("dd.MM.yyyy")}";
+        }
+    }
+    class FriedMeat : Meat
+    {
+        private string _typeOfFry;
+        private bool _packed;
+        private Standart _standart;
+        private bool _hasStandart = false;
+        public FriedMeat(string name, int weight, string date, bool sliced, bool halal, string typeOfFry, bool packed) : base(name, weight, date, sliced, halal)
+        {
+            _typeOfFry = typeOfFry;
+            _packed = packed;
+        }
+        public FriedMeat(string name, int weight, string date, bool sliced, bool halal, string typeOfFry, bool packed, Standart standart) : base(name, weight, date, sliced, halal)
+        {
+            _typeOfFry = typeOfFry;
+            _packed = packed;
+            _standart = standart;
+            _hasStandart = true;
+        }
+        public override int GetQuality()
+        {
+            int res;
+            int days = FoodProduct.DaysToShelf(_expiryDate);
+            if (_hasStandart)
+            {
+                res = 0;
+                for (int i = 0; i < 10; i++)
+                {
+                    if (days > _standart.Value(i)) { res = i + 1; }
+                }
+            }
+            else
+            {
+                if (days >= 5) { res = 10; }
+                else if (days < 0) { res = 0; }
+                else { res = (int)Math.Round(days * 2.0); }
+            }
+            return res;
         }
     }
     class Bakery : FoodProduct
