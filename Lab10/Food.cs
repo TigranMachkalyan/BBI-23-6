@@ -116,8 +116,8 @@ namespace Lab10
     }
     class Meat : FoodProduct
     {
-        private bool _sliced;
-        private bool _halal;
+        protected bool _sliced;
+        protected bool _halal;
         public Meat(string name, int weight, string date, bool sliced, bool halal) : base(name, weight, date)
         {
             _sliced = sliced;
@@ -179,6 +179,17 @@ namespace Lab10
                 else { res = (int)Math.Round(days * 2.0); }
             }
             return res;
+        }
+        public override string ToString()
+        {
+            string s, h, p;
+            if (_sliced) { s = "Да"; }
+            else { s = "Нет"; }
+            if (_halal) { h = "Да"; }
+            else { h = "Нет"; }
+            if (_packed) { p = "Да"; }
+            else { p = "Нет"; }
+            return $"Название: {_name}\nМасса: {_weight} г\nТип жарки: {_typeOfFry}\nНарезанное: {s}\nЗапакован:{p}\nХаляль: {h}\nСрок годности истекает: {_expiryDate.ToString("dd.MM.yyyy")}";
         }
     }
     class Bakery : FoodProduct

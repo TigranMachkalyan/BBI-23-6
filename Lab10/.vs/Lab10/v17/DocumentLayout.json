@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|d:\\coding\\progmisis\\bbi-23-6\\lab10\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|solutionrelative:food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\serializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|solutionrelative:serializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|d:\\coding\\progmisis\\bbi-23-6\\lab10\\standart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|solutionrelative:standart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\analyzersort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|solutionrelative:analyzersort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\analyzerstat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,20 +23,24 @@
       "RelativeMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|solutionrelative:istat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|d:\\coding\\progmisis\\bbi-23-6\\lab10\\analyzersort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|solutionrelative:analyzersort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\analyzer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|solutionrelative:analyzer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\analyzerspread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|solutionrelative:analyzerspread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\ispread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|solutionrelative:ispread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\analyzerspread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|solutionrelative:analyzerspread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\analyzer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|solutionrelative:analyzer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|solutionrelative:food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|d:\\coding\\progmisis\\bbi-23-6\\lab10\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86055793-2647-4465-9409-4B4BB320C098}|Lab10.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,65 +62,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAgwDsAAAAFAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAgwDsAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-10T21:33:24.371Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "Food.cs",
               "DocumentMoniker": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\Food.cs",
               "RelativeDocumentMoniker": "Food.cs",
               "ToolTip": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\Food.cs",
               "RelativeToolTip": "Food.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADkAAAAzAAAA",
+              "ViewState": "AQIAAMIAAAAAAAAAAAA7wJIAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-10T21:34:49.184Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Analyzer.cs",
               "DocumentMoniker": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\Analyzer.cs",
               "RelativeDocumentMoniker": "Analyzer.cs",
               "ToolTip": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\Analyzer.cs",
               "RelativeToolTip": "Analyzer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-12T21:23:11.593Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "ISpread.cs",
               "DocumentMoniker": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\ISpread.cs",
               "RelativeDocumentMoniker": "ISpread.cs",
               "ToolTip": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\ISpread.cs",
               "RelativeToolTip": "ISpread.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAEAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-12T21:02:30.571Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "AnalyzerSpread.cs",
               "DocumentMoniker": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\AnalyzerSpread.cs",
               "RelativeDocumentMoniker": "AnalyzerSpread.cs",
               "ToolTip": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\AnalyzerSpread.cs",
               "RelativeToolTip": "AnalyzerSpread.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBEAAABEAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-12T21:05:25.587Z",
               "EditorCaption": ""
@@ -129,7 +133,7 @@
               "RelativeDocumentMoniker": "IStat.cs",
               "ToolTip": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\IStat.cs",
               "RelativeToolTip": "IStat.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-12T21:19:45.296Z",
               "EditorCaption": ""
@@ -142,33 +146,46 @@
               "RelativeDocumentMoniker": "AnalyzerStat.cs",
               "ToolTip": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\AnalyzerStat.cs",
               "RelativeToolTip": "AnalyzerStat.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAQwEAAAAANAAAA",
+              "ViewState": "AQIAADIAAAAAAAAAAAAIwEIAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-12T21:21:44.975Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "AnalyzerSort.cs",
               "DocumentMoniker": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\AnalyzerSort.cs",
               "RelativeDocumentMoniker": "AnalyzerSort.cs",
               "ToolTip": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\AnalyzerSort.cs",
               "RelativeToolTip": "AnalyzerSort.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAlAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEwAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-14T21:08:52.585Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "Standart.cs",
+              "DocumentMoniker": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\Standart.cs",
+              "RelativeDocumentMoniker": "Standart.cs",
+              "ToolTip": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\Standart.cs",
+              "RelativeToolTip": "Standart.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T20:52:46.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Serializer.cs",
               "DocumentMoniker": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\Serializer.cs",
               "RelativeDocumentMoniker": "Serializer.cs",
               "ToolTip": "D:\\Coding\\progmisis\\BBI-23-6\\Lab10\\Serializer.cs",
               "RelativeToolTip": "Serializer.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAAwDAAAAAEAAAA",
+              "ViewState": "AQIAACYAAAAAAAAAAAAuwDAAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-12T21:44:50.676Z",
               "EditorCaption": ""

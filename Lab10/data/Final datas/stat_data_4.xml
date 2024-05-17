@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <string>Максимальное значение: 10</string>
-  <string>Минимальное значение: 2</string>
-  <string>Среднее значение: 4,4</string>
-  <string>Медианное значение: 3</string>
-</ArrayOfString>

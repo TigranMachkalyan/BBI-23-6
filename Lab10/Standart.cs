@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 
 namespace Lab10
 {
     struct Standart
     {
         private string _name;
+        public string Name { get { return _name; } }
         private double[] _values;
         public Standart(string name, double[] values)
         {
